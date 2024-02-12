@@ -44,7 +44,7 @@ Use build token XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX to connect.
 Use admin token XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX to manage the project.
 ```
 
-For more details, please refer to the following.
+For more details, please refer to the following.  
 https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md#project-creation
 
 ## Create LHCI Configuration file to your app project.
@@ -53,20 +53,20 @@ https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md#
 Write the path you want to verify of your app project in the `url` field, and write the URL of Cloud Run in the `serverBaseUrl` field.
 ```js
 module.exports = {
-	ci: {
-		collect: {
-			startServerCommand: "npm start",
-			url: ["http://localhost:3000"],
-			numberOfRuns: 1,
-			settings: {
-				emulatedFormFactor: "desktop",
-			},
-		},
-		upload: {
-			target: "lhci",
-			serverBaseUrl: "https://xxxxxxxxx.a.run.app",
-		},
-	},
+    ci: {
+        collect: {
+            startServerCommand: "npm start",
+            url: ["http://localhost:3000"],
+            numberOfRuns: 1,
+            settings: {
+                emulatedFormFactor: "desktop",
+            },
+        },
+        upload: {
+            target: "lhci",
+            serverBaseUrl: "https://xxxxxxxxx.a.run.app",
+        },
+    },
 };
 ```
 
@@ -103,6 +103,7 @@ jobs:
 3. Create secrets in the Actions of your app project. Move to `https://github.com/username/your-app-project/settings/secrets/actions` and click `New repository secret` button. 
 
 4. Enter `LHCI_TOKEN` in the Name field, and the build token you noted down earlier in the `Secret` field, then save it.
+   <img width="1148" alt="image" src="https://github.com/yajihum/lhci/assets/117247060/c59f64cd-784c-467a-9f2c-1d8a1c50e99f">
 
 ## Referense
 https://github.com/GoogleChrome/lighthouse-ci
