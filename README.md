@@ -23,7 +23,7 @@ gcloud builds submit --tag gcr.io/PROJECT_ID/lhci
 
 2. Set the environment variables respectively and deploy to Cloud Run.
 ```bash
-gcloud run deploy --image gcr.io/PROJECT_ID/lhci --set-env-vars R2_ENDPOINT=https://ACCOUNT_ID.r2.cloudflarestorage.com/,R2_BUCKET=xxxxx,R2_ACCESS_KEY_ID=yyyyy,R2_SECRET_ACCESS_KEY=zzzzz
+gcloud run deploy --image gcr.io/PROJECT_ID/lhci --platform managed --port 9001 --set-env-vars R2_ENDPOINT=https://ACCOUNT_ID.r2.cloudflarestorage.com/,R2_BUCKET=xxxxx,R2_ACCESS_KEY_ID=yyyyy,R2_SECRET_ACCESS_KEY=zzzzz
 ```
 
 ## Create Lighthouse CI Project
